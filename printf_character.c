@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *printf_char - function that print one character*
+ *_printf_char - function that print one character
  *@args: the argument list containing the character to print
  *Return: the number of characters printed (always 1)
  */
