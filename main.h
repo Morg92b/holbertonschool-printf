@@ -12,6 +12,8 @@ int _printf_char(va_list args);
 
 int _printf_string(va_list args);
 
+int _putchar(char c);
+
 
 
 
