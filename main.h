@@ -14,6 +14,8 @@ int _printf_string(va_list args);
 
 int _putchar(char c);
 
+int _printf_percentage(va_list args);
+
 
 
 
