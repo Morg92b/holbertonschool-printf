@@ -7,10 +7,10 @@
 #include <stdarg.h>
 
 /**
- * struct format_specifier - struct to map specifiers to functions.
+ * struct format_type - struct to map specifiers to functions.
  * @specifier: format specifier character.
- * @print_func: pointer to the function that handles printing for specifier.
- * Despcription: associate format specifiers with corresponding print function.
+ * @func: pointer to the function that handles printing for specifier.
+ * Description: associate format specifiers with corresponding print function.
  */
 
 typedef struct format_type
