@@ -6,7 +6,7 @@
  * Return: 1 if one character has been printed
  */
 
-int _printf_percentage(__attribute__((unused))va_list args) /* ignoring the argument */
+int _printf_percentage(__attribute__((unused))va_list args)
 {
 	_putchar('%'); /* Print the character */
 	return (1);
