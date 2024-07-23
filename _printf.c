@@ -55,7 +55,7 @@ int (*get_format_function(char check))(va_list)
 		{"c", _printf_char},
 		{"s", _printf_string},
 		{"%", _printf_percentage},
-		{0, NULL},
+		{NULL, NULL},
 	};
 	for (index_2 = 0; ftypes[index_2].specifier != NULL; index_2++)
 	{
