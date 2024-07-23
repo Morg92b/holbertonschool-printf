@@ -11,9 +11,9 @@ int _printf(const char *format, ...)
 	int index = 0, count = 0;
 	int (*func)(va_list args);
 
-	if (format == NULL)
+	if (!format)
 	{
-		return (0);
+		return (-1);
 	}
 	va_start(args, format);
 	while (format && format[index])
