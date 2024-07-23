@@ -57,7 +57,7 @@ int (*get_format_function(char check))(va_list)
 		{"%", _printf_percentage},
 		{NULL, NULL},
 	};
-	for (index_2 = 0; ftypes[index_2].specifier != NULL; index_2++)
+	for (index_2 = 0; index_2 < 3; index_2++)
 	{
 		if (ftypes[index_2].specifier[0] == check)
 		{
