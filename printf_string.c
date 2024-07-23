@@ -9,11 +9,11 @@
 int _printf_string(va_list args)
 {
 	int count = 0; /* Initializes a counter */
-	char *str = va_arg(args, char*);
+	char *str = va_arg(args, char *);
 	/* Retrieves the next argument from the args list */
 
 	if (str == NULL)
-		str = ("NULL"); /* to avoid undefined behavior, if NULL */
+		str = ("(null)"); /* to avoid undefined behavior, if NULL */
 
 	while (str[count])
 	{
