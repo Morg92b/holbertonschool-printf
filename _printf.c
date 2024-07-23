@@ -3,8 +3,8 @@
 /**
  * _printf - Create 'function printf with struct and variadic functions'
  * @format: list of types of arguments passed to the function
+ * Return: count for counter a character print
  */
-
 int _printf(const char *format, ...)
 {
 	format_specifier_t specifiers[] = {
@@ -13,7 +13,6 @@ int _printf(const char *format, ...)
 		{'%', _printf_percentage},
 		{0, NULL},
 	};
-
 	va_list args;
 	int index = 0, j;
 	int count = 0;      /* counter a character print */
@@ -21,18 +20,16 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format && format[index])
 	{
-		if ( format[index] == '%')
+		if (format[index] == '%')
 		{
 			index++;
-			j = 0;
-		while (specifiers[j].specifier)
+		for (j = 0; specifiers[j].specifier; j++)
 		{
 			if (format[index] == specifiers[j].specifier)
 			{
 				specifiers[j].print_func(args);
 				break;
 			}
-			j++;
 		}
 		if (!specifiers[j].specifier)
 		{
