@@ -7,15 +7,9 @@
  */
 int _printf(const char *format, ...)
 {
-	format_specifier_t specifiers[] = {
-		{'c', _printf_char},
-		{'s', _printf_string},
-		{'%', _printf_percentage},
-		{0, NULL},
-	};
 	va_list args;
-	int index = 0, j;
-      /* counter a character print */
+	int index = 0, count = 0;
+	int (*func)(va_list args);
 
 	va_start(args, format);
 	while (format && format[index])
@@ -23,26 +17,48 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
-		for (j = 0; specifiers[j].specifier; j++)
-		{
-			if (format[index] == specifiers[j].specifier)
+			func = get_format_function(format[index]);
+			if (func)
 			{
-				specifiers[j].print_func(args);
-				break;
+				count += func(args);
 			}
-		}
-		if (!specifiers[j].specifier)
-		{
-			_putchar('%');
-			_putchar(format[index]);
-		}
+			else
+			{
+				_putchar('%');
+				_putchar(format[index]);
+				count += 2;
+			}
 		}
 		else
 		{
 			_putchar(format[index]);
+			count++;
 		}
 		index++;
 	}
 	va_end(args);
-	return (index - 1);
+	return (count);
+}
+/**
+ * get_format_function - function to return the function format
+ * @check: character to check
+ * Return: function or null
+ */
+int (*get_format_function(char check))(va_list)
+{
+	int index_2;
+	format_t ftypes[] = {
+		{"c", _printf_char},
+		{"s", _printf_string},
+		{"%", _printf_percentage},
+		{0, NULL},
+	};
+	for (index_2 = 0; ftypes[index_2].specifier != NULL; index_2++)
+	{
+		if (ftypes[index_2].specifier[0] == check)
+		{
+			return (ftypes[index_2].func);
+		}
+	}
+	return (NULL);
 }
