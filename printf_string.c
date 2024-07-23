@@ -15,11 +15,9 @@ int _printf_string(va_list args)
 	if (str == NULL)
 		str = ("NULL"); /* to avoid undefined behavior, if NULL */
 
-	while (*str != 0)
+	while (str[count])
 	{
-		_putchar(*str); /* putchar the string */
-		str++; /* increments the str pointer */
-		count++; /* increments  the count of counter */
+		_putchar(str[count++]); /* putchar the string */
 	}
 	return (count);
 }
