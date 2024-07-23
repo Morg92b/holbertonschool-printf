@@ -13,11 +13,11 @@
  * Despcription: associate format specifiers with corresponding print function.
  */
 
-typedef struct format_specifier
+typedef struct format_type
 {
-	char specifier;
-	int (*print_func)(va_list args);
-} format_specifier_t;
+	char *specifier;
+	int (*func)(va_list args);
+} format_t;
 
 int _printf(const char *format, ...);
 
@@ -29,14 +29,6 @@ int _putchar(char c);
 
 int _printf_percentage(va_list args);
 
-
-
-
-
-
-
-
-
-
+int (*get_format_function(char check))(va_list);
 
 #endif /* MAIN_H */
