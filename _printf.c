@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 
 	va_list args;
 	int index = 0, j;
+	int count = 0;      /* counter a character print */
 
 	va_start(args, format);
 	while (format && format[index])
@@ -33,6 +34,11 @@ int _printf(const char *format, ...)
 			}
 			j++;
 		}
+		if (!specifiers[j].specifier)
+		{
+			_putchar('%');
+			_putchar(format[index]);
+		}
 		}
 		else
 		{
@@ -41,5 +47,5 @@ int _printf(const char *format, ...)
 		index++;
 	}
 	va_end(args);
-	return (0);
+	return (count);
 }
