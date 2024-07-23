@@ -17,6 +17,10 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
+			if (format[index] == '\0')
+			{
+				return (-1);
+			}
 			func = get_format_function(format[index]);
 			if (func)
 			{
