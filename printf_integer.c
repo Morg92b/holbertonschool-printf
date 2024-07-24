@@ -29,7 +29,7 @@ int _printf_integer(va_list args)
 		return (1);
 	}
 	temp = num; /*Extract the digits and the buffer in reverse order */
-	while (num > 0)
+	while (temp > 0)
 	{
 		buffer[index++] = (temp % 10) + '0';
 		temp /= 10;
