@@ -31,6 +31,6 @@ int _printf_percentage(va_list args);
 
 int (*get_format_function(char check))(va_list);
 
- int _printf_integer(va_list args);
+int _printf_integer(va_list args);
 
 #endif /* MAIN_H */
