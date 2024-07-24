@@ -7,16 +7,15 @@
  */
 int _printf_integer(va_list args)
 {
-	long int num = va_arg(args, long int);
+	int num = va_arg(args, int);
 
 	/* this is the entire extract from the variadic argument list */
 
 	int count = 0; /* count: it is counter the number print */
-	long int temp; /*it is a variable temp for stock the num */
 	char buffer[50]; /* it is array containing the digits of the integer */
 	int index = 0;
 
-	if (num < 0) /* For manage the negative number */
+	if (num < 0)
 	{
 		_putchar('-');
 		count++;
@@ -28,16 +27,15 @@ int _printf_integer(va_list args)
 		_putchar('0');
 		return (1);
 	}
-	temp = num; /*Extract the digits and the buffer in reverse order */
-	while (temp > 0)
+	while (num > 0)
 	{
-		buffer[index++] = (temp % 10) + '0';
-		temp /= 10;
+		buffer[index++] = (num % 10) + '0';
+		num /= 10;
 	}
 
-	for (--index; index >= 0; index--) /* For print the number in good order */
+	while (index > 0) /* For print the number in good order */
 	{
-		_putchar(buffer[index]);
+		_putchar(buffer[--index]);
 		count++;
 	}
 	return (count);
