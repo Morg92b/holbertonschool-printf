@@ -34,4 +34,6 @@ int (*get_format_function(char check))(va_list);
 
 int _printf_integer(va_list args);
 
+void print_recursion(int num, int *count);
+
 #endif /* MAIN_H */
