@@ -3,7 +3,7 @@
 /**
  * _printf_integer - Print 'number integer'
  * @args: that's the argument
- * Return: count
+ * Return: Number of char printed
  */
 int _printf_integer(va_list args)
 {
@@ -27,17 +27,17 @@ int _printf_integer(va_list args)
 	return (count);
 }
 /**
- * recursive - Print 'recursive number'
+ * print_recursion - Print 'recursive number'
  *@num: integer the number whose digits will be displayed
- @count: count the number of digits displayed
+ *@count: count the number of digits displayed
  */
 
 void print_recursion(int num, int *count)
 {
-    if (num / 10 != 0)
-    {
-        print_recursion(num / 10, count);
-    }
-    _putchar((num % 10) + '0');
-    (*count)++;
+	if (num / 10)
+	{
+		print_recursion(num / 10, count);
+	}
+	_putchar((num % 10) + '0');
+	(*count)++;
 }
