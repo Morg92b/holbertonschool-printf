@@ -60,6 +60,8 @@ int (*get_format_function(char check))(va_list)
 		{"c", _printf_char},
 		{"s", _printf_string},
 		{"%", _printf_percentage},
+		{"d", _printf_integer},
+		{"i", _printf_integer},
 		{'\0', NULL},
 	};
 	for (index_2 = 0; ftypes[index_2].specifier != NULL; index_2++)
