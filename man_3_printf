@@ -1,0 +1,91 @@
+.TH _printf 1
+
+.SH NAME
+_printf \- formatted output conversion
+
+.SH SYNOPSIS
+#include "main.h"
+
+int_printf(const char *format, ...);
+
+.SH DESCRIPTION
+The printf function in C displays formatted output to the screen. It uses a format string containing text and specifiers: "%s"(string), "%c"(character), "%%"(percent sign), "%i" (integer) and "%d"(decimal number) to indicate how to display each argument. Each specifier corresponds to an argument passed after the format string. 
+
+.SH CONVERSION SPECIFIERS
+.BR
+
+.RB [\-c
+.IR char ]
+.RB [\-s 
+.IR string ]
+.RB [\-% 
+.IR % ]
+.RB [\-d 
+.IR decimals ]
+.RB [\-i 
+.IR integers ]
+
+.SH OPTIONS
+.TP
+.BR c
+Print char
+.TP
+.BR s
+Print string
+.TP
+.BR %%
+print single %
+.TP
+.BR d
+Print decimal
+.TP
+.BR d
+Print integer
+
+.SH RETURN VALUE
+The _printf returns the numbers of characters printed (excluding the null byte used to end output to strings) if the operation was successful. If it's a error, it returns -1.
+
+.SH ATTRIBUTES
+.TS
+allbox, center, tab(|);
+cB | cB | cB
+cB | cB | cB
+l | l | l.
+Interface     | Attribute      | Value
+_printf()     | Thread safety  | MT-Safe locale
+.TE
+
+.SH STANDARDS
+C89, POSIX.1-2001.
+
+.SH EXAMPLE
+.BR
+
+_printf("%d", 456);
+
+Output: 456
+.BR
+
+_printf("%i", -456);
+
+Output: -456
+.BR
+
+_printf("%s", "Chong is the best.");
+
+Output: Chong is the best.
+.BR
+
+_printf("%%")
+
+Output: %
+
+.SH AUTHORS
+Morgan Bouaziz & Guillaume Farina
+
+If u need help or u have question : 
+
+<https://github.com/Morg92b> or <https://github.com/GuillaumeFarina>
+
+.SH SEE ALSO
+_printf is a reissue of the main printf function. to see the manual you type man printf
