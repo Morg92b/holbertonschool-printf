@@ -1,43 +1,45 @@
 #include "main.h"
 
 /**
- * _printf_integer - Print 'number integer'
- * @args: that's the argument
- * Return: Number of char printed
+ * _printf_integer - it is print the number integer
+ * @args: it is the number argument 
+ * Return: count
  */
 int _printf_integer(va_list args)
 {
+	int count = 0, index, j;
 	int num = va_arg(args, int);
-	/* this is the entire extract from the variadic argument list */
-	int count = 0; /* count: it is counter the number print */
+	char buffer[50];
+	unsigned int n;
+
+	if (!num)
+	{
+		_putchar('0');
+		return (1);
+	}
 
 	if (num < 0)
 	{
 		_putchar('-');
+		n = -num;
 		count++;
-		num = -num;
 	}
 
-	if (num == 0) /* For manage the zero number */
+	else
+		n = num;
+
+	index = 0;
+	while (n != 0)
 	{
-		_putchar('0');
-		return (count + 1);
+		buffer[i++] = (n % 10) + '0';
+		n /= 10;
 	}
-	print_recursion(num, &count);
+
+	for (j = index - 1; j >= 0; j--)
+	{
+		_putchar(buffer[j]);
+		count++;
+	}
+
 	return (count);
-}
-/**
- * print_recursion - Print 'recursive number'
- *@num: integer the number whose digits will be displayed
- *@count: count the number of digits displayed
- */
-
-void print_recursion(int num, int *count)
-{
-	if (num / 10)
-	{
-		print_recursion(num / 10, count);
-	}
-	_putchar((num % 10) + '0');
-	(*count)++;
 }
