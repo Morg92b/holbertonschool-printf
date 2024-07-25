@@ -39,11 +39,11 @@ print single %
 .BR d
 Print decimal
 .TP
-.BR d
+.BR i
 Print integer
 
 .SH RETURN VALUE
-The _printf returns the numbers of characters printed (excluding the null byte used to end output to strings) if the operation was successful. If it's a error, it returns -1.
+The _printf returns the numbers of characters printed (excluding the null byte used to end output to strings) if the operation was successful. If it's a error, it will returns -1.
 
 .SH ATTRIBUTES
 .TS
@@ -56,6 +56,8 @@ _printf()     | Thread safety  | MT-Safe locale
 .TE
 
 .SH STANDARDS
+.BR
+
 C89, POSIX.1-2001.
 
 .SH EXAMPLE
@@ -83,9 +85,9 @@ Output: %
 .SH AUTHORS
 Morgan Bouaziz & Guillaume Farina
 
-If u need help or u have question : 
+If you need some help or any question ask : 
 
 <https://github.com/Morg92b> or <https://github.com/GuillaumeFarina>
 
 .SH SEE ALSO
-_printf is a reissue of the main printf function. to see the manual you type man printf
+_printf is a reissue of the main printf function. To see the manual you type: man printf
