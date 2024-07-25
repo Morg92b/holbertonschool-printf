@@ -31,7 +31,7 @@ int _printf_integer(va_list args)
 	index = 0;
 	while (n != 0)
 	{
-		buffer[i++] = (n % 10) + '0';
+		buffer[index++] = (n % 10) + '0';
 		n /= 10;
 	}
 
