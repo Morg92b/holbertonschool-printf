@@ -2,7 +2,7 @@
 
 /**
  * _printf_integer - it is print the number integer
- * @args: it is the number argument 
+ * @args: it is the number argument
  * Return: count
  */
 int _printf_integer(va_list args)
